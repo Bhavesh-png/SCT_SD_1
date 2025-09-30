@@ -178,7 +178,6 @@ The program will print the unsolved and solved versions of the puzzle defined in
 
 Example Output
 The program will display the following output for the default puzzle:
-
 # Unsolved Sudoku Puzzle:
 5 3 0 | 0 7 0 | 0 0 0
 6 0 0 | 1 9 5 | 0 0 0
@@ -191,7 +190,7 @@ The program will display the following output for the default puzzle:
 0 6 0 | 0 0 0 | 2 8 0
 0 0 0 | 4 1 9 | 0 0 5
 0 0 0 | 0 8 0 | 0 7 9
-
+---
 # ✅ Solved Sudoku Puzzle:
 5 3 4 | 6 7 8 | 9 1 2
 6 7 2 | 1 9 5 | 3 4 8
