@@ -81,8 +81,7 @@ Clone the repository or download the code:
 
 Bash
 
-git clone https://github.com/your-username/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/Bhavesh-png/SCT_SD_1/tree/main/Task_2
 Compile the Java file:
 Open your terminal or command prompt and run the Java compiler.
 
