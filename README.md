@@ -209,83 +209,137 @@ Language: Java
     ```
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # SCT_SD_4
-# E-commerce Product Scraper 🛒
+# Java E-commerce Web Scraper 
 
-A Java application designed to scrape product information—specifically names, prices, and ratings—from the e-commerce practice website `books.toscrape.com`. The extracted data is then neatly organized and saved into a CSV file.
+A practical Java web scraper built with the **Jsoup** library. This project connects to the e-commerce sandbox website [books.toscrape.com](http://books.toscrape.com/), extracts product information, and saves it to a local CSV file.  
 
-This program serves as a practical example of web scraping and data extraction using Java and the Jsoup library.
+This project was created as part of my software development internship with **SkillCraft Technology**.
 
-## Features
+---
 
-  - **Web Page Scraping:** Connects to a target URL and fetches its HTML content.
-  - **Data Extraction:** Parses the HTML to extract specific product details: name, price, and star rating.
-  - **CSV Export:** Stores the collected data in a structured, easy-to-read CSV file named `products.csv`.
-  - **Robust Parsing:** Uses the powerful Jsoup library to navigate the HTML DOM with CSS selectors.
-  - **Clean Data:** Includes logic to format and clean the extracted data (e.g., removing currency symbols).
+## 🎞️ Project Demo
 
------
+A video demonstrating the program's execution and the resulting CSV file is available, showcasing the successful scraping process from start to finish.
 
-## Prerequisites
+---
 
-To run this program, you need to have the **Java Development Kit (JDK)** and **Apache Maven** installed. This project also depends on an external library called **Jsoup**.
+## 📋 Table of Contents
 
-### Jsoup Dependency
+- [Features](#-features)  
+- [Prerequisites](#-prerequisites)  
+- [How to Use](#-how-to-use)  
+  - [From the Command Line](#from-the-command-line)  
+  - [Using an IDE](#using-an-ide)  
+- [Example Output](#-example-output)  
+- [Technology](#-technology)  
+- [Contributing](#-contributing)  
+- [License](#-license)  
 
-If you are using Maven, add the following dependency to your `pom.xml` file to include Jsoup in your project:
+---
 
-```xml
-<dependency>
-    <groupId>org.jsoup</groupId>
-    <artifactId>jsoup</artifactId>
-    <version>1.17.2</version>
-</dependency>
+## ✨ Features
+
+- **Web Page Scraping**: Connects to the target URL and fetches the full HTML content.  
+- **Data Extraction**: Parses the HTML using CSS selectors to extract key product details:  
+  - Full product title  
+  - Price (including currency symbol)  
+  - Star rating (as text, e.g., "Three")  
+- **CSV Export**: Writes the collected data into a structured CSV file named `products.csv`.  
+- **Robust Parsing**: Utilizes **Jsoup** to efficiently navigate and manipulate the HTML DOM.  
+
+---
+
+## 🛠️ Prerequisites
+
+- Java Development Kit (JDK) 8 or higher  
+- [Jsoup Library](https://jsoup.org/download) (`jsoup-1.21.2.jar`)  
+
+---
+
+## 🚀 How to Use
+
+### From the Command Line
+
+1. Place `EcommerceScraper.java` and `jsoup-1.21.2.jar` in the same directory.  
+2. Open your terminal or command prompt in that directory.  
+3. Compile the Java file including the Jsoup JAR in the classpath:  
+
+**Windows:**  
+```bash
+javac -cp .;jsoup-1.21.2.jar EcommerceScraper.java
+````
+
+**macOS/Linux:**
+
+```bash
+javac -cp .:jsoup-1.21.2.jar EcommerceScraper.java
 ```
 
------
+4. Run the compiled program:
 
-## How to Use
+**Windows:**
 
-### 1\. Set Up a Maven Project
-
-Create a new Maven project in your IDE and add the Jsoup dependency as shown above.
-
-### 2\. Add the Java Files
-
-Place the `Product.java` and `WebScraper.java` files into the appropriate source folder (e.g., `src/main/java/your/package/name/`).
-
-### 3\. Run the Application
-
-Navigate to the root directory of your project in the terminal and run the application using the Maven command:
-
-```sh
-# Compile and run the main class
-mvn compile exec:java -Dexec.mainClass="WebScraper"
+```bash
+java -cp .;jsoup-1.21.2.jar EcommerceScraper
 ```
 
-The program will connect to the website, scrape the data, and create a `products.csv` file in the root directory of your project.
+**macOS/Linux:**
 
------
-
-## Example Output (`products.csv`)
-
-The generated CSV file will look like this:
-
-```csv
-Name,Price,Rating
-A Light in the Attic,51.77,3/5 Stars
-Tipping the Velvet,53.74,1/5 Stars
-Soumission,50.10,1/5 Stars
-Sharp Objects,47.82,4/5 Stars
-Sapiens: A Brief History of Humankind,54.23,5/5 Stars
-...
+```bash
+java -cp .:jsoup-1.21.2.jar EcommerceScraper
 ```
 
------
+5. A `products.csv` file will be generated in the same directory.
 
-## Technology
+---
 
-  - **Language:** **Java**
-  - **Build Tool:** **Maven**
-  - **External Libraries:**
-  - **Jsoup:** For fetching and parsing HTML.
-  - **Core Libraries:** `java.io.FileWriter` for writing to the CSV file.
+### Using an IDE (VS Code, IntelliJ, Eclipse)
+
+1. Create a new Java project in your IDE.
+2. Add `EcommerceScraper.java` to your project's `src` folder.
+3. Add `jsoup-1.21.2.jar` to your project dependencies (often by creating a `lib` folder and adding it to the build path).
+4. Run the `main` method in `EcommerceScraper.java`.
+5. The `products.csv` file will appear in the project root directory.
+
+---
+
+## 📊 Example Output (`products.csv`)
+
+| Product Name                          | Price  | Rating |
+| ------------------------------------- | ------ | ------ |
+| A Light in the Attic                  | £51.77 | Three  |
+| Tipping the Velvet                    | £53.74 | One    |
+| Soumission                            | £50.10 | One    |
+| Sharp Objects                         | £47.82 | Four   |
+| Sapiens: A Brief History of Humankind | £54.23 | Five   |
+
+---
+
+## 💻 Technology
+
+* **Language**: Java
+* **Libraries**:
+
+  * [Jsoup](https://jsoup.org/) for HTML parsing
+  * `java.io.FileWriter` for CSV file writing
+
+---
+
+## 🙌 Contributing
+
+Contributions are welcome! Feel free to fork this repository and submit a pull request with improvements.
+
+---
+
+## 📄 License
+
+This project is open-source under the **MIT License**.
+
+```
+
+---
+
+If you want, I can also create a **more visually appealing GitHub-ready version** with badges for **Java**, **MIT License**, and **Jsoup**, making it stand out on your profile.  
+
+Do you want me to do that?
+```
